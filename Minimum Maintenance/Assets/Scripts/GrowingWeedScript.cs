@@ -48,9 +48,9 @@ public class GrowingWeedScript : MonoBehaviour
         if (growTimer >= 5)
         {
             if (onLeftField)
-                HealthManager.Instance.TakeDamageLeftHouse(1f);
+                HealthManager.Instance.TakeDamageLeftHouse(damage);
             else
-                HealthManager.Instance.TakeDamageRightHouse(1f);
+                HealthManager.Instance.TakeDamageRightHouse(damage);
             growTimer = 0f;
         }
         else growTimer += 1 * Time.deltaTime;
