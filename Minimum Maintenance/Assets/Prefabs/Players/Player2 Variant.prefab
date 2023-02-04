@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235273, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: Player2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235274, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_Sprite
@@ -132,24 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: Player1
---- !u!114 &1148253275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3710434747721944461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ef1fc92f48cfe84990535d0eba23c18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHoldState: 0
-  pickupInput: Pickup2
-  dashInput: Dash2
-  plants: []
-  chargeAmmount: 10
-  chargeImage: {fileID: 2556602407753242711}
+  isGrabbing: 0
+  isHolding: 0
 --- !u!1001 &1325749398394744411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -251,14 +235,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2831c391bc9f20a4aa08c508929bd5f7, type: 3}
---- !u!114 &2556602407753242711 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3538952265841505804, guid: 2831c391bc9f20a4aa08c508929bd5f7, type: 3}
-  m_PrefabInstance: {fileID: 1325749398394744411}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
