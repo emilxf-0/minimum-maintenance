@@ -1,12 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ThrownWeedScript : MonoBehaviour
 {
+    [SerializeField] private Sprite[] growStateSprite;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    
     private int growState;
     private float growTimer;
-    
+
+    private void Start()
+    {
+        
+    }
+
     void Update()
     {
         Grow();
@@ -20,10 +30,10 @@ public class ThrownWeedScript : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x + 0.25f, transform.localScale.y + 0.25f,
                 transform.localScale.z);
             growState++;
+            spriteRenderer.sprite = growStateSprite[growState];
             growTimer = 0f;
         }
         else
             growTimer += 1 * Time.deltaTime;
-
     }
 }

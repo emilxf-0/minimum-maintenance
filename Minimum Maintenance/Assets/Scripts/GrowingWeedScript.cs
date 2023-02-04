@@ -9,8 +9,9 @@ using Random = UnityEngine.Random;
 public class GrowingWeedScript : MonoBehaviour
 {
     [SerializeField] private GameObject weedObj;
-
     [SerializeField] private float countDownToNewWeed;
+    [SerializeField] private Sprite[] growStateSprites;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     private int newWeedCounter = 0;
     private bool isGrabbed = false;
@@ -39,6 +40,7 @@ public class GrowingWeedScript : MonoBehaviour
             transform.localScale = new Vector3(transform.localScale.x + 0.25f, transform.localScale.y + 0.25f,
                 transform.localScale.z);
             growState++;
+            spriteRenderer.sprite = growStateSprites[growState];
             growTimer = 0f;
         }
         else

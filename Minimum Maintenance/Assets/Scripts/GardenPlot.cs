@@ -11,12 +11,14 @@ public class GardenPlot : MonoBehaviour
     [SerializeField] private GameObject weedObj;
     [SerializeField] private GameObject thrownWeed;
     [SerializeField] private float adjustedSpawnInterval = 5f;
+
+    public bool harderByTime;
     
     private float weedSpawnInterval;
     private float countdownCounter;
     private int growState;
     private float growTimer;
-    
+
     private void Start()
     {
         weedSpawnInterval = adjustedSpawnInterval;
@@ -58,25 +60,6 @@ public class GardenPlot : MonoBehaviour
             weedSpawnInterval -= 1 * Time.deltaTime;
     }
 
-    // private void ChooseSpawnDirection()
-    // {
-    //     switch (Random.Range(0, 4))
-    //     {
-    //         case 0:
-    //             SpawnWeed(1);
-    //             break;
-    //         case 1:
-    //             SpawnWeed(2);
-    //             break;
-    //         case 2:
-    //             SpawnWeed(3);
-    //             break;
-    //         default:
-    //             SpawnWeed(4);
-    //             break;
-    //     }
-    // }
-
     private void SpawnWeed()
     {
         Bounds bounds = GetComponent<PolygonCollider2D>().bounds;
@@ -91,5 +74,9 @@ public class GardenPlot : MonoBehaviour
     public void HitByWeed(Vector2 hitLocation)
     {
         Instantiate(thrownWeed, hitLocation, transform.rotation);
+        if (harderByTime)
+        {
+            
+        }
     }
 }
