@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Scripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -15,10 +16,18 @@ public class GardenPlot : MonoBehaviour
     [SerializeField] private float adjustedSpawnInterval = 5f;
     
     private float weedSpawnInterval;
+    private float countdownCounter;
 
     private void Start()
     {
         weedSpawnInterval = adjustedSpawnInterval;
+        countdownCounter = 5f;
+    }
+
+    private void FixedUpdate()
+    {
+        Debug.Log("Weed Spawn Interval: " + weedSpawnInterval);
+        Debug.Log("Adjusted timer: " + adjustedSpawnInterval);
     }
 
     private void Update()
@@ -30,7 +39,15 @@ public class GardenPlot : MonoBehaviour
     private void IncreaseSpawnInterval()
     {
         //Increases spawns successively as the match progresses
-        
+        if (countdownCounter <= 0)
+        {
+            adjustedSpawnInterval--;
+            countdownCounter = 5f;
+            if (adjustedSpawnInterval < 1)
+                adjustedSpawnInterval = 1;
+        }
+        else
+            countdownCounter = countdownCounter -1 * Time.deltaTime;
     }
 
     private void CountDownToSpawn()
@@ -39,9 +56,10 @@ public class GardenPlot : MonoBehaviour
         {
             ChooseSpawnDirection();
             weedSpawnInterval = adjustedSpawnInterval;
+            Debug.Log("Spawning weed");
         }
         else
-            weedSpawnInterval = weedSpawnInterval - 1 * Time.deltaTime;
+            weedSpawnInterval = weedSpawnInterval -1 * Time.deltaTime;
     }
 
     private void ChooseSpawnDirection()
@@ -63,7 +81,6 @@ public class GardenPlot : MonoBehaviour
         }
     }
 
-    
     private void SpawnWeed(int direction)
     {
     //Direction:
