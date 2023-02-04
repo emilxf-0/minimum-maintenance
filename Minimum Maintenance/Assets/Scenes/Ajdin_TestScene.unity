@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 275702266}
   - component: {fileID: 275702265}
   - component: {fileID: 275702264}
+  - component: {fileID: 275702269}
   m_Layer: 0
   m_Name: Test_Player
   m_TagString: Player
@@ -333,9 +334,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHoldState: 0
-  pickupInput: Jump
-  dashInput: Fire1
+  pickupInput: Fire1
+  dashInput: Jump
   plants: []
+  rootedPlants:
+  - {fileID: 7267025486255903488, guid: 68397e34cb68f304abbd5c8afee842d4, type: 3}
+  - {fileID: 3059972681389851950, guid: 596fc132c55acce4888dcc154c0b736f, type: 3}
+  holdPosition: {fileID: 0}
   chargeAmmount: 10
   chargeImage: {fileID: 1205308354}
 --- !u!50 &275702265
@@ -454,6 +459,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &275702269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275702263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ebcf0c5d55b574aa2c79c044070b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: Horizontal
+  vertical: Vertical
+  dash: Jump
+  movementSpeed: 3
+  dashingMultiplyer: 10
+  dashDuration: 0.25
+  dashCoolDown: 0.25
+  isUpRooting: 0
 --- !u!1 &276391154
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,8 +21,12 @@ public class PickUp : MonoBehaviour
     public string pickupInput = "Jump";
     public string dashInput = "Fire1";
 
-    [SerializeField] private List<GameObject> plants = new List<GameObject>();
+    [SerializeField] private List<GameObject> plants = new();
 
+    [Header("Holding Components")]
+    public List<GameObject> rootedPlants = new();
+    private GameObject holdingPlant;
+    public GameObject holdPosition;
 
     [Header("Charge Values")]
     public float chargeAmmount = 10;
@@ -31,19 +36,24 @@ public class PickUp : MonoBehaviour
     private float chargeTimer;
     public Image chargeImage;
 
+    private Movement moveScript;
+
+
 
     private void Start()
     {
+        moveScript = GetComponent<Movement>();
         chargeImage.fillAmount = 0;
         chargeImage.gameObject.SetActive(false);
 
     }
 
     private void Update()
-    {
-        
+    {        
         if (currentHoldState == PickupState.Idle) //If I'm idle
         {
+            moveScript.isUpRooting = false;
+
             chargeImage.gameObject.SetActive(false);
 
             if (plants.Count > 0)                   // and have plants below me
@@ -88,6 +98,8 @@ public class PickUp : MonoBehaviour
                 // Start Spam sequence
 
                 chargeImage.gameObject.SetActive(true);
+                moveScript.isUpRooting = true;
+
 
                 currentHoldState = PickupState.UpprootingPlant;
 
@@ -103,15 +115,8 @@ public class PickUp : MonoBehaviour
                 }
                 else
                 {
-                    Destroy(plants[0]);
-
-                    chargeTimer = 0;
-                    chargeImage.fillAmount = 0;
-                    currentHoldState = PickupState.Idle;
+                    RootingPlant();
                 }
-
-
-
                 //Start Spamm sequance
                 //When Sequance done roll dice if it's picked up or discarded               
 
@@ -129,6 +134,56 @@ public class PickUp : MonoBehaviour
             }
         }
     }
+
+
+    private void RootingPlant()
+    {
+        if(plants[0].CompareTag("Plant"))
+        {
+            int randNum = Random.Range(0, 2);
+
+            if (randNum == 0)
+                DestroyPlant();
+            else
+                PickupPlant();
+
+        }
+        else if (plants[0].CompareTag("PlantGrown"))
+        {
+            int randNum = Random.Range(0, 5);
+
+            if (randNum == 0)
+                DestroyPlant();
+            else
+                PickupPlant();
+
+        }
+        else if (plants[0].CompareTag("PlantThrown"))
+        {
+            DestroyPlant();
+        }
+
+        chargeTimer = 0;
+        chargeImage.fillAmount = 0;
+
+    }
+
+    void PickupPlant()
+    {
+        int randomPlant = Random.Range(0, rootedPlants.Count);
+
+        //holdingPlant = Instantiate(rootedPlants[randomPlant], plants[0].transform.position, rootedPlants[randomPlant].transform.rotation);
+        Destroy(plants[0]);
+
+    }
+    void DestroyPlant()
+    {
+        //Add throwaway anim here
+        Destroy(plants[0]);
+        currentHoldState = PickupState.Idle;
+    }
+
+
 
 
     private void OnTriggerEnter2D(Collider2D collision)
