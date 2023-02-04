@@ -14,6 +14,7 @@ public class Throwable : MonoBehaviour
     {
         Invoke(nameof(LandingCheck), timeToStart);
     }
+
     private void LandingCheck()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.forward, 1f);

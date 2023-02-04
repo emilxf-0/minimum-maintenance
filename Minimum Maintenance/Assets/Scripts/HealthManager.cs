@@ -87,4 +87,6 @@ public class HealthManager : MonoBehaviour
     {
         gardenHealthLeftHouse.fillAmount += pointsToHeal;
     }
+    
+    
 }
