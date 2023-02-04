@@ -17,11 +17,17 @@ public class GrowingWeedScript : MonoBehaviour
     private bool isGrabbed = false;
     private int growState;
     private float growTimer;
+    private bool onLeftField;
+    
     public LayerMask invalidSurfaces;
 
     private void Start()
     {
         countDownToNewWeed = 5f;
+        if (transform.position.x < 0)
+            onLeftField = true;
+        else
+            onLeftField = false;
     }
 
     private void Update()
@@ -30,6 +36,22 @@ public class GrowingWeedScript : MonoBehaviour
             CountDown();
         else if (!isGrabbed && growState <= 2)
             Grow();
+
+        if (growState > 1)
+            DealDamage();
+    }
+
+    private void DealDamage()
+    {
+        if (growTimer >= 5)
+        {
+            if (onLeftField)
+                HealthManager.Instance.TakeDamageLeftHouse(1f);
+            else
+                HealthManager.Instance.TakeDamageRightHouse(1f);
+            growTimer = 0f;
+        }
+        else growTimer += 1 * Time.deltaTime;
     }
 
     private void Grow()
@@ -37,11 +59,13 @@ public class GrowingWeedScript : MonoBehaviour
         if (growTimer >= 5f && growState <= 1)
         {
             Debug.Log("Weed grown+1");
-            transform.localScale = new Vector3(transform.localScale.x + 0.25f, transform.localScale.y + 0.25f,
-                transform.localScale.z);
             growState++;
             spriteRenderer.sprite = growStateSprites[growState];
             growTimer = 0f;
+            if (onLeftField)
+                HealthManager.Instance.TakeDamageLeftHouse(1f);
+            else
+                HealthManager.Instance.TakeDamageRightHouse(1f);
         }
         else
             growTimer += 1 * Time.deltaTime;

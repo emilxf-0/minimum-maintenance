@@ -13,6 +13,7 @@ public class GardenPlot : MonoBehaviour
     [SerializeField] private float adjustedSpawnInterval = 5f;
 
     public bool harderByTime;
+    public bool isLeftField;
     
     private float weedSpawnInterval;
     private float countdownCounter;

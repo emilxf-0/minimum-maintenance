@@ -68,22 +68,22 @@ public class HealthManager : MonoBehaviour
             
     }
 
-    private void TakeDamageLeftHouse(float damageTaken)
+    public void TakeDamageLeftHouse(float damageTaken)
     {
         gardenHealthLeftHouse.fillAmount -= damageTaken;
     }
     
-    private void TakeDamageRightHouse(float damageTaken)
+    public void TakeDamageRightHouse(float damageTaken)
     {
         gardenHealthRightHouse.fillAmount -= damageTaken;
     }
 
-    private void HealRightHouse(float pointsToHeal)
+    public void HealRightHouse(float pointsToHeal)
     {
         gardenHealthRightHouse.fillAmount += pointsToHeal;
     }
     
-    private void HealLeftHouse(float pointsToHeal)
+    public void HealLeftHouse(float pointsToHeal)
     {
         gardenHealthLeftHouse.fillAmount += pointsToHeal;
     }

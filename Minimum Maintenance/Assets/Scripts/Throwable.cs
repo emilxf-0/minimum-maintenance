@@ -20,6 +20,8 @@ public class Throwable : MonoBehaviour
                // if (!movementScript.isStunned)
                //      movementScript.Stun();
                Destroy(gameObject);
+               MusicManager musicManager = FindObjectOfType<MusicManager>();
+               musicManager.PlayImpact();
           }
           else if (hit.transform.tag == KEY_TAG_GROUND)
           {

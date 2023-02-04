@@ -6,34 +6,33 @@ using UnityEngine;
 
 public class ThrownWeedScript : MonoBehaviour
 {
-    [SerializeField] private Sprite[] growStateSprite;
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    
-    private int growState;
-    private float growTimer;
+    private bool onLeftField;
+    private float damageTimer;
 
     private void Start()
     {
-        
+        damageTimer = 0f;
+        if (transform.position.x < 0)
+            onLeftField = true;
+        else
+            onLeftField = false;
     }
 
     void Update()
     {
-        //Grow();
+        DealDamage();
     }
 
-    private void Grow()
+    private void DealDamage()
     {
-        if (growTimer >= 5f && growState <= 2)
+        if (damageTimer >= 5)
         {
-            Debug.Log("Weed grown+1");
-            transform.localScale = new Vector3(transform.localScale.x + 0.25f, transform.localScale.y + 0.25f,
-                transform.localScale.z);
-            growState++;
-            spriteRenderer.sprite = growStateSprite[growState];
-            growTimer = 0f;
+            if (onLeftField)
+                HealthManager.Instance.TakeDamageLeftHouse(1f);
+            else
+                HealthManager.Instance.TakeDamageRightHouse(1f);
+            damageTimer = 0f;
         }
-        else
-            growTimer += 1 * Time.deltaTime;
+        else damageTimer += 1 * Time.deltaTime;
     }
 }

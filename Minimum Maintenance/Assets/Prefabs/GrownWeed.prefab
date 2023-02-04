@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2887518263742616963}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.89353, y: -0.46498835, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.22274064, g: 0.5849056, b: 0.1401566, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 16730d40cee9c1743ad2f7d650c4ac5f, type: 3}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,9 +101,9 @@ MonoBehaviour:
   weedObj: {fileID: 2887518263742616963}
   countDownToNewWeed: 0
   growStateSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 16730d40cee9c1743ad2f7d650c4ac5f, type: 3}
+  - {fileID: 21300000, guid: c93b7eba0d3ef124289138e703e6b4d5, type: 3}
+  - {fileID: 21300000, guid: 58497fbca4264bf4483999b426996dbf, type: 3}
   spriteRenderer: {fileID: 1238456941690832237}
   invalidSurfaces:
     serializedVersion: 2
