@@ -11,7 +11,9 @@ public class Movement : MonoBehaviour
     //Components
     Rigidbody2D rb = null;
 
-    [Header("Inputs")] 
+    [Header("Inputs")]
+    [Range(1, 2)] public int player;
+    
 
     [SerializeField] string horizontal = "Horizontal";
     [SerializeField] string vertical = "Vertical";
@@ -43,6 +45,9 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        horizontal += player.ToString();
+        vertical += player.ToString();
+        dash += player.ToString();
     }
 
     void Update()

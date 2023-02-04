@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     public string player = "Player1";
-   
+    public bool isGrabbing = false;
+    public bool isHolding = false;
     string currentState;
     //fields
     Animator anim;
@@ -20,23 +21,60 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Update()
     {
+       
+        if(rb.velocity.x > 0)
+        {
+            anim.SetFloat("velocity", 1);
+        }
+        else if(rb.velocity.x < 0)
+        {
+            anim.SetFloat("velocity", 1);
+        }
+        else
+        {
+            anim.SetFloat("velocity", -1);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            isGrabbing = true;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            isGrabbing = false;
+            isHolding = true;
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            isHolding= false;
+        }
+
         if(rb.velocity.x > 0)
         {
             spriteRenderer.flipX = false;
-            anim.SetBool("isRunning", true);
            // ChangeAnimationState($"{player}_Run");
         }
         else if(rb.velocity.x < 0)
         {
             spriteRenderer.flipX = true;
-            anim.SetBool("isRunning", true);
            // ChangeAnimationState($"{player}_Run");
         }
-        else //if player is not trying to dig something up
+
+        if (isGrabbing == true)
         {
-            anim.SetBool("isRunning", false);
-           // ChangeAnimationState($"{player}_Idle");
-        }    
+            anim.SetBool("unRooting", true);
+        }
+
+        if(isHolding == true)
+        {
+            anim.SetBool("unRooting", false);
+            anim.SetBool("holding", true);
+        }
+        else
+        {
+            anim.SetBool("holding", false);
+        }
+        
+        
     }
     
     //private void ChangeAnimationState(string state)
