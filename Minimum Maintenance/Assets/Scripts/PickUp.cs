@@ -73,7 +73,7 @@ public class PickUp : MonoBehaviour
         moveScript = GetComponent<Movement>();
         chargeImage.fillAmount = 0;
         chargeImage.gameObject.SetActive(false);
-
+        playerAnimations = GetComponent<PlayerAnimations>();
     }
 
     private void Update()
@@ -108,7 +108,7 @@ public class PickUp : MonoBehaviour
                 {
                     moveScript.isUpRooting = false;
                     isHolding = false;
-
+                    playerAnimations.unRooting = false;
                     RemoveChargebar();
 
                     if (plants.Count > 0)                   // and have plants below me
@@ -119,6 +119,7 @@ public class PickUp : MonoBehaviour
                 break;
             case PickupState.AbovePlant:// or if I'm above plant but there are no plants
                 {
+                    playerAnimations.unRooting = false;
                     if (plants.Count < 1)
                     {
                         currentHoldState = PickupState.Idle;
@@ -129,16 +130,20 @@ public class PickUp : MonoBehaviour
                 {
                     if (Input.GetButtonDown(dashInput)) //If I dash cancel the uprooting
                     {
+                        playerAnimations.unRooting = false;
+
                         currentHoldState = PickupState.Idle;
                         plants.Clear();
                     }
-                    
+                    playerAnimations.unRooting = true;
                 }
                 break;
             case PickupState.HoldingPlant:
                 {
+                    playerAnimations.isHolding = true;
                     if (isHolding)
                     {
+                         playerAnimations.unRooting = false;
                         holdingPlant.transform.position = holdPosition.transform.position;
 
 
@@ -165,6 +170,7 @@ public class PickUp : MonoBehaviour
                             arcHeight = minMaxHeight.x;
                             throwDuration = minMaxDuration.x;
 
+                            playerAnimations.isHolding = false;
                         }
 
                     }
@@ -280,6 +286,8 @@ public class PickUp : MonoBehaviour
     void DestroyPlant()
     {
         //Add throwaway anim here
+        playerAnimations.isHolding = false;
+        playerAnimations.unRooting = false;
         Destroy(plants[0]);
         currentHoldState = PickupState.Idle;
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAnimations : MonoBehaviour
 {
     public string player = "Player1";
-    public bool isGrabbing = false;
+    public bool unRooting = false;
     public bool isHolding = false;
     string currentState;
     //fields
@@ -22,25 +22,26 @@ public class PlayerAnimations : MonoBehaviour
     private void Update()
     {
        
-        if(rb.velocity.x > 0)
-        {
-            anim.SetFloat("velocity", 1);
-        }
-        else if(rb.velocity.x < 0)
-        {
-            anim.SetFloat("velocity", 1);
-        }
-        else
-        {
-            anim.SetFloat("velocity", -1);
-        }
+        //if(rb.velocity.x > 0)
+        //{
+        //    anim.SetFloat("velocity", 1);
+        //}
+        //else if(rb.velocity.x < 0)
+        //{
+        //    anim.SetFloat("velocity", 1);
+        //}
+        //else
+        //{
+        //    anim.SetFloat("velocity", -1);
+        //}
+        anim.SetFloat("velocity",rb.velocity.sqrMagnitude);
         if (Input.GetKeyDown(KeyCode.W))
         {
-            isGrabbing = true;
+            unRooting = true;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            isGrabbing = false;
+            unRooting = false;
             isHolding = true;
         }
         if (Input.GetKeyDown(KeyCode.A))
@@ -59,9 +60,13 @@ public class PlayerAnimations : MonoBehaviour
            // ChangeAnimationState($"{player}_Run");
         }
 
-        if (isGrabbing == true)
+        if (unRooting == true)
         {
             anim.SetBool("unRooting", true);
+        }
+        else
+        {
+            anim.SetBool("unRooting", false);
         }
 
         if(isHolding == true)

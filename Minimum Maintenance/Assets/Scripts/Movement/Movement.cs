@@ -64,7 +64,6 @@ public class Movement : MonoBehaviour
 
         
 
-
         if (dir != Vector2.zero)
         {
             lastDir = dir;
@@ -75,8 +74,9 @@ public class Movement : MonoBehaviour
             isUpRooting = false;
             isDashing = true;
             canDash = false;
-           
+            
             SpawnDash();
+            StartCoroutine(stopDashing());
         }
         
     }
@@ -93,22 +93,24 @@ public class Movement : MonoBehaviour
 
         if (isDashing == true)
         {
+           
             Dash();
-            return;
         }
     }
     private void Dash() //is a speedup but you cant steer during it
     {
         rb.velocity = lastDir * dashingMultiplyer;
-        IEnumerator stopDashing()
-        {
-            yield return new WaitForSeconds(dashDuration);
-            isDashing = false;
+        
+        
+    }
+    private IEnumerator stopDashing()
+    {
+        yield return new WaitForSeconds(dashDuration);
+        isDashing = false;
 
-            yield return new WaitForSeconds(dashCoolDown);
-            canDash = true;
-        }
-        StartCoroutine(stopDashing());
+        yield return new WaitForSeconds(dashCoolDown);
+        Debug.Log("hej");
+        canDash = true;
     }
     public void Stun()
     {
@@ -122,6 +124,7 @@ public class Movement : MonoBehaviour
     }
     private void SpawnDash()
     {
+        Debug.Log(canDash);
         bool shouldFlip = false;
         if(rb.velocity.x < 0)
         {
