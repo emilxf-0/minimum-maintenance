@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Plant
+  - PlantGrown
+  - PlantThrown
   layers:
   - Default
   - TransparentFX
