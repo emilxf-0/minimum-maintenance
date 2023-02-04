@@ -1163,6 +1163,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
+      propertyPath: thrownWeed
+      value: 
+      objectReference: {fileID: 2858780635720633684, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+    - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1565833172}
@@ -1471,8 +1475,16 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.43
+      value: -4.4299994
       objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1488,15 +1500,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1527,6 +1539,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187889501389074583, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: playerNum
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 187889501389074583, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: rootedPlants.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 187889501389074583, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: rootedPlants.Array.data[0]
+      value: 
+      objectReference: {fileID: 6873688757976248814, guid: 465fa811feab8814a95ef07e98b2e881, type: 3}
     - target: {fileID: 3710434747721944449, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1578,6 +1602,18 @@ PrefabInstance:
     - target: {fileID: 3710434747721944462, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487878416437511808, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487878416437511808, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6487878416437511808, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8054061861461990932, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
       propertyPath: m_Camera
@@ -1946,6 +1982,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
+      propertyPath: thrownWeed
+      value: 
+      objectReference: {fileID: 2858780635720633684, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
     - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
       propertyPath: spriteRenderer
       value: 
