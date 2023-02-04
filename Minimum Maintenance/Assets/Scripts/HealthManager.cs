@@ -8,32 +8,83 @@ using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private Image gardenHealth;
+    private static HealthManager instance;
+    public static HealthManager Instance 
+    {
+        get
+        {
+            if (instance == null)
+            {
+                Debug.Log("Health manager doesn't exist");
+            }
+            
+            return instance;
+        }
+    }
+
+    [SerializeField] private Image gardenHealthLeftHouse;
+    [SerializeField] private Image gardenHealthRightHouse;
 
     private float playerGardenHealth = 1f;
     private float maxHealth = 1f;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
+    
     private void Start()
     {
-        gardenHealth.fillAmount = maxHealth;
+        gardenHealthLeftHouse.fillAmount = maxHealth;
+        gardenHealthRightHouse.fillAmount = maxHealth;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
-            TakeDamage(0.1f);
+        if (Input.GetKey(KeyCode.D))
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+               TakeDamageLeftHouse(0.1f);
+            
+            if (Input.GetKeyDown(KeyCode.R))
+               TakeDamageRightHouse(0.1f);
+        }
         
-        if (Input.GetKeyDown(KeyCode.H))
-            Heal(0.05f);
+        if (Input.GetKey(KeyCode.H))
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+                HealLeftHouse(0.05f);
+            
+            if (Input.GetKeyDown(KeyCode.R))
+                HealRightHouse(0.05f);
+        }
+            
     }
 
-    private void TakeDamage(float damageTaken)
+    private void TakeDamageLeftHouse(float damageTaken)
     {
-        gardenHealth.fillAmount -= damageTaken;
+        gardenHealthLeftHouse.fillAmount -= damageTaken;
+    }
+    
+    private void TakeDamageRightHouse(float damageTaken)
+    {
+        gardenHealthRightHouse.fillAmount -= damageTaken;
     }
 
-    private void Heal(float pointsToHeal)
+    private void HealRightHouse(float pointsToHeal)
     {
-        gardenHealth.fillAmount += pointsToHeal;
+        gardenHealthRightHouse.fillAmount += pointsToHeal;
+    }
+    
+    private void HealLeftHouse(float pointsToHeal)
+    {
+        gardenHealthLeftHouse.fillAmount += pointsToHeal;
     }
 }
