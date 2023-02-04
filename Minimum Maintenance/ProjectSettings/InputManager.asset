@@ -527,10 +527,10 @@ InputManager:
     altPositiveButton: 
     gravity: 3
     dead: 0.01
-    sensitivity: 0.1
+    sensitivity: 1000
     snap: 0
     invert: 1
-    type: 2
+    type: 0
     axis: 0
     joyNum: 1
   - serializedVersion: 3
@@ -575,10 +575,10 @@ InputManager:
     altPositiveButton: 
     gravity: 3
     dead: 0.01
-    sensitivity: 0.1
+    sensitivity: 1000
     snap: 0
     invert: 1
-    type: 2
+    type: 0
     axis: 0
     joyNum: 2
   m_UsePhysicalKeys: 0
