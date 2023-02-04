@@ -18,11 +18,13 @@ public class GrowingWeedScript : MonoBehaviour
     private int growState;
     private float growTimer;
     private bool onLeftField;
+    private float damage;
     
     public LayerMask invalidSurfaces;
 
     private void Start()
     {
+        damage = 0.05f;
         countDownToNewWeed = 5f;
         if (transform.position.x < 0)
             onLeftField = true;
@@ -63,9 +65,9 @@ public class GrowingWeedScript : MonoBehaviour
             spriteRenderer.sprite = growStateSprites[growState];
             growTimer = 0f;
             if (onLeftField)
-                HealthManager.Instance.TakeDamageLeftHouse(1f);
+                HealthManager.Instance.TakeDamageLeftHouse(damage);
             else
-                HealthManager.Instance.TakeDamageRightHouse(1f);
+                HealthManager.Instance.TakeDamageRightHouse(damage);
         }
         else
             growTimer += 1 * Time.deltaTime;

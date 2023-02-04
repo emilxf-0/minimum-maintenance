@@ -8,9 +8,11 @@ public class ThrownWeedScript : MonoBehaviour
 {
     private bool onLeftField;
     private float damageTimer;
-
+    private float damage;
+    
     private void Start()
     {
+        damage = 0.05f;
         damageTimer = 0f;
         if (transform.position.x < 0)
             onLeftField = true;
@@ -28,9 +30,9 @@ public class ThrownWeedScript : MonoBehaviour
         if (damageTimer >= 5)
         {
             if (onLeftField)
-                HealthManager.Instance.TakeDamageLeftHouse(1f);
+                HealthManager.Instance.TakeDamageLeftHouse(damage);
             else
-                HealthManager.Instance.TakeDamageRightHouse(1f);
+                HealthManager.Instance.TakeDamageRightHouse(damage);
             damageTimer = 0f;
         }
         else damageTimer += 1 * Time.deltaTime;

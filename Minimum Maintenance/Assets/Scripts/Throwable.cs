@@ -17,8 +17,7 @@ public class Throwable : MonoBehaviour
           if (hit.transform.tag == KEY_TAG_PLAYER)
           {
                Movement movement = hit.collider.GetComponent<Movement>();
-               // if (!movementScript.isStunned)
-               //      movementScript.Stun();
+               movement.Stun();
                Destroy(gameObject);
                MusicManager musicManager = FindObjectOfType<MusicManager>();
                musicManager.PlayImpact();
