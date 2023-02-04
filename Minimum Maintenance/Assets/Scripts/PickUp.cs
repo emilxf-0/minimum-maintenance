@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -9,20 +10,20 @@ using UnityEngine.UI;
 
 public class PickUp : MonoBehaviour
 {
-    private enum PickupState
+    public enum PickupState
     {
         Idle,
         AbovePlant,
         UpprootingPlant,
         HoldingPlant
     }
-
-    [SerializeField] private PickupState currentHoldState;
+    
+    public PickupState currentHoldState;
 
     [Range(1f, 2f)]
     public int playerNum = 1;
-    public string pickupInput = "Jump";
-    public string dashInput = "Fire1";
+    public string pickupInput = "Pickup";
+    public string dashInput = "Dash";
     [SerializeField] private List<GameObject> plants = new();
 
     [Header("Throw Components")]
@@ -45,7 +46,7 @@ public class PickUp : MonoBehaviour
     public List<GameObject> rootedPlants = new();
     private GameObject holdingPlant;
     public GameObject holdPosition;
-    bool isHolding = false;
+    public bool isHolding = false;
 
     [Header("Charge Values")]
     public float chargeAmmount = 10;
@@ -154,6 +155,7 @@ public class PickUp : MonoBehaviour
                             currentHoldState = PickupState.Idle;
 
                             holdingPlant.transform.DOJump(throwPosition.transform.position, arcHeight, 1, throwDuration).SetEase(throwCurve);
+                            holdingPlant.GetComponent<Throwable>().InvokeLanding(throwDuration);
 
                             currentThrowCharge = 0;
                             throwPosition.SetActive(false);
@@ -245,6 +247,9 @@ public class PickUp : MonoBehaviour
             DestroyPlant();
         }
 
+        if (playerNum == 1)
+            HealthManager.Instance.HealLeftHouse(0.025f);
+        
         chargeTimer = 0;
         chargeImage.fillAmount = 0;
 
