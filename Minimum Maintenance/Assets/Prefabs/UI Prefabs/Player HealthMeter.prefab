@@ -315,6 +315,7 @@ GameObject:
   - component: {fileID: 8196578483748726241}
   - component: {fileID: 8196578483748726247}
   - component: {fileID: 8196578483748726240}
+  - component: {fileID: 6443604764099687031}
   m_Layer: 5
   m_Name: Player HealthMeter
   m_TagString: Untagged
@@ -385,6 +386,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6443604764099687031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8196578483748726242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c250a76912919ed4fb78871ebec5e5cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8200692230442705301
 GameObject:
   m_ObjectHideFlags: 0
