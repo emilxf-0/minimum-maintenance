@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3595447274385235269}
   - component: {fileID: 3595447274385235274}
   - component: {fileID: 3595447274385235275}
+  - component: {fileID: -460211460760360137}
   - component: {fileID: 3595447274385235272}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,9 +103,26 @@ MonoBehaviour:
   vertical: Vertical1
   dash: Dash1
   movementSpeed: 10
-  dashingMultiplyer: 2
+  dashingMultiplyer: 20
   dashDuration: 0.125
   dashCoolDown: 0.25
+  stunDuration: 0.5
+  dashEffect: {fileID: 0}
+  isUpRooting: 0
+  isStunned: 0
+--- !u!114 &-460211460760360137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595447274385235273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360d28139f5f08f4cb1813e930bc21a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: Player1
 --- !u!50 &3595447274385235272
 Rigidbody2D:
   serializedVersion: 4
