@@ -11,9 +11,9 @@ public class GardenPlot : MonoBehaviour
     [SerializeField] private GameObject weedObj;
     [SerializeField] private GameObject thrownWeed;
     [SerializeField] private float adjustedSpawnInterval = 5f;
-
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    
     public bool harderByTime;
-    public bool isLeftField;
     
     private float weedSpawnInterval;
     private float countdownCounter;
@@ -24,6 +24,7 @@ public class GardenPlot : MonoBehaviour
     {
         weedSpawnInterval = adjustedSpawnInterval;
         countdownCounter = 5f;
+        spriteRenderer.enabled = false;
     }
 
     private void Update()
