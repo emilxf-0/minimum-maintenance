@@ -436,8 +436,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHoldState: 0
   playerNum: 1
-  pickupInput: Fire1
-  dashInput: Jump
+  pickupInput: Pickup
+  dashInput: Dash
   plants: []
   throwChargeSpeed: 0.8
   currentThrowCharge: 0
@@ -479,9 +479,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   throwPosition: {fileID: 700539598}
   rootedPlants:
-  - {fileID: 7267025486255903488, guid: 68397e34cb68f304abbd5c8afee842d4, type: 3}
-  - {fileID: 3059972681389851950, guid: 596fc132c55acce4888dcc154c0b736f, type: 3}
+  - {fileID: 6873688757976248814, guid: 465fa811feab8814a95ef07e98b2e881, type: 3}
   holdPosition: {fileID: 451254638}
+  isHolding: 0
   chargeAmmount: 10
   chargeImage: {fileID: 1205308354}
 --- !u!50 &275702265
@@ -615,12 +615,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontal: Horizontal
   vertical: Vertical
-  dash: Jump
+  dash: Dash1
   movementSpeed: 3
   dashingMultiplyer: 10
   dashDuration: 0.25
   dashCoolDown: 0.25
+  stunDuration: 0.5
+  dashEffect: {fileID: 0}
   isUpRooting: 0
+  isStunned: 0
 --- !u!1 &276391154
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +635,7 @@ GameObject:
   - component: {fileID: 276391157}
   - component: {fileID: 276391156}
   - component: {fileID: 276391155}
+  - component: {fileID: 276391158}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -705,6 +709,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &276391158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276391154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &324690453
 GameObject:
   m_ObjectHideFlags: 0
