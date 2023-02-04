@@ -57,7 +57,7 @@ public class PickUp : MonoBehaviour
     public Image chargeImage;
 
     private Movement moveScript;
-
+    private PlayerAnimations playerAnimations;
 
 
     private void Start()
@@ -132,6 +132,7 @@ public class PickUp : MonoBehaviour
                         currentHoldState = PickupState.Idle;
                         plants.Clear();
                     }
+                    
                 }
                 break;
             case PickupState.HoldingPlant:
