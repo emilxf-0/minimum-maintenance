@@ -282,11 +282,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-<<<<<<< HEAD
-        if (collision.tag == "PlantGrown")
-=======
         if (collision.CompareTag("Plant") || collision.CompareTag("PlantGrown") || collision.CompareTag("PlantThrown"))
->>>>>>> feature/Hold_and_Throw
         {
             plants.Add(collision.gameObject);
         }
@@ -294,11 +290,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-<<<<<<< HEAD
-        if (collision.tag == "PlantGrown")
-=======
         if (collision.CompareTag("Plant") || collision.CompareTag("PlantGrown") || collision.CompareTag("PlantThrown"))
->>>>>>> feature/Hold_and_Throw
         {
 
             plants.Remove(collision.gameObject);
