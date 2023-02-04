@@ -62,12 +62,10 @@ public class Movement : MonoBehaviour
             dir = new Vector2(dirx, diry).normalized;
         }
 
-        if(isUpRooting == true || isStunned == true)
-        {
-            rb.velocity = Vector2.zero;
-        }
+        
 
-        if(dir != Vector2.zero)
+
+        if (dir != Vector2.zero)
         {
             lastDir = dir;
         }
@@ -84,7 +82,14 @@ public class Movement : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = dir * movementSpeed;
+        if (isUpRooting == true || isStunned == true)
+        {
+            rb.velocity = Vector2.zero;
+        }
+        else
+        {
+            rb.velocity = dir * movementSpeed;
+        }
 
         if (isDashing == true)
         {

@@ -97,7 +97,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -115,8 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e493e373e038ad4ab7ff054f540b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growStateSprite: []
-  spriteRenderer: {fileID: 8236160797342844395}
 --- !u!114 &1387623285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,5 +127,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e493e373e038ad4ab7ff054f540b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  growStateSprite: []
-  spriteRenderer: {fileID: 8236160797342844395}

@@ -130,6 +130,7 @@ public class PickUp : MonoBehaviour
                     if (Input.GetButtonDown(dashInput)) //If I dash cancel the uprooting
                     {
                         currentHoldState = PickupState.Idle;
+                        plants.Clear();
                     }
                 }
                 break;
