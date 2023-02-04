@@ -133,7 +133,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Plant")
+        if (collision.tag == "PlantGrown")
         {
             plants.Add(collision.gameObject);
         }
@@ -141,7 +141,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Plant")
+        if (collision.tag == "PlantGrown")
         {
 
             plants.Remove(collision.gameObject);

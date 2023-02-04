@@ -19,7 +19,7 @@ public class ThrownWeedScript : MonoBehaviour
 
     void Update()
     {
-        Grow();
+        //Grow();
     }
 
     private void Grow()

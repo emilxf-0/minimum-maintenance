@@ -34,7 +34,7 @@ public class GrowingWeedScript : MonoBehaviour
 
     private void Grow()
     {
-        if (growTimer >= 5f && growState <= 2)
+        if (growTimer >= 5f && growState <= 1)
         {
             Debug.Log("Weed grown+1");
             transform.localScale = new Vector3(transform.localScale.x + 0.25f, transform.localScale.y + 0.25f,
