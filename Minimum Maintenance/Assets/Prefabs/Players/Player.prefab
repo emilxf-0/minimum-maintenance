@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3595447274385235275}
   - component: {fileID: -460211460760360137}
   - component: {fileID: 3595447274385235272}
+  - component: {fileID: 187869518}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1312307858, guid: b0f450c1f541c64409e3ffaa2af8bb7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,15 +100,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3ebcf0c5d55b574aa2c79c044070b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontal: Horizontal1
-  vertical: Vertical1
-  dash: Dash1
+  player: 1
+  horizontal: Horizontal
+  vertical: Vertical
+  dash: Dash
   movementSpeed: 10
   dashingMultiplyer: 20
   dashDuration: 0.125
   dashCoolDown: 0.25
   stunDuration: 0.5
-  dashEffect: {fileID: 0}
+  dashEffect: {fileID: 3637422044387478249, guid: 13366a721e3d2ce4f8981b281cdefc5e, type: 3}
   isUpRooting: 0
   isStunned: 0
 --- !u!114 &-460211460760360137
@@ -123,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: Player1
+  isGrabbing: 0
+  isHolding: 0
 --- !u!50 &3595447274385235272
 Rigidbody2D:
   serializedVersion: 4
@@ -144,3 +148,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!95 &187869518
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3595447274385235273}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5c32ff2d94d52e46b681782a8d1999d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
