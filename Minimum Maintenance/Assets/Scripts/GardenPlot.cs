@@ -14,23 +14,22 @@ public class GardenPlot : MonoBehaviour
     
     private float weedSpawnInterval;
     private float countdownCounter;
-
+    private int growState;
+    private float growTimer;
+    
     private void Start()
     {
         weedSpawnInterval = adjustedSpawnInterval;
         countdownCounter = 5f;
     }
 
-    private void FixedUpdate()
-    {
-        Debug.Log("Weed Spawn Interval: " + weedSpawnInterval);
-        Debug.Log("Adjusted timer: " + adjustedSpawnInterval);
-    }
-
     private void Update()
     {
-        CountDownToSpawn();
-        IncreaseSpawnInterval();
+        if (growState < 3)
+        {
+            CountDownToSpawn();
+            IncreaseSpawnInterval();
+        }
     }
 
     private void IncreaseSpawnInterval()

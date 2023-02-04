@@ -14,6 +14,8 @@ public class GrowingWeedScript : MonoBehaviour
 
     private int newWeedCounter = 0;
     private bool isGrabbed = false;
+    private int growState;
+    private float growTimer;
     public LayerMask invalidSurfaces;
 
     private void Start()
@@ -23,8 +25,25 @@ public class GrowingWeedScript : MonoBehaviour
 
     private void Update()
     {
-        if (!isGrabbed)
+        if (!isGrabbed && growState > 2)
             CountDown();
+        else if (!isGrabbed && growState <= 2)
+            Grow();
+    }
+
+    private void Grow()
+    {
+        if (growTimer >= 5f && growState <= 2)
+        {
+            Debug.Log("Weed grown+1");
+            transform.localScale = new Vector3(transform.localScale.x + 0.25f, transform.localScale.y + 0.25f,
+                transform.localScale.z);
+            growState++;
+            growTimer = 0f;
+        }
+        else
+            growTimer += 1 * Time.deltaTime;
+
     }
 
     private void CountDown()

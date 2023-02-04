@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class ThrownPlantScript : MonoBehaviour
+public class Throwable : MonoBehaviour
 {
-     [SerializeField] private Sprite[] sprites;
-
      private const string KEY_TAG_PLAYER = "Player";
      private const string KEY_TAG_GROUND = "Ground";
      private const string KEY_TAG_GROWNWEED = "PlantGrown";
