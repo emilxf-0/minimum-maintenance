@@ -1471,6 +1471,30 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: low
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: high
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: time
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: pickupRumbleTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: pickupLowFrequency
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: pickupHighFrequency
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: rootedPlants.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1478,6 +1502,54 @@ PrefabInstance:
       propertyPath: rootedPlants.Array.data[0]
       value: 
       objectReference: {fileID: 6873688757976248814, guid: 465fa811feab8814a95ef07e98b2e881, type: 3}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[1].time
+      value: 0.21661556
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[2].time
+      value: 0.2563313
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[1].value
+      value: 1.0055268
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[2].value
+      value: 0.1265433
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[1].inSlope
+      value: 0.010166244
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[2].inSlope
+      value: -14.025132
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[1].outSlope
+      value: 0.010166244
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[2].inWeight
+      value: 0.065915145
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[2].outSlope
+      value: -14.025132
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rumbleCurve.m_Curve.Array.data[1].outWeight
+      value: 0.43583828
+      objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_RootOrder
       value: 7

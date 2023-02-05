@@ -5,6 +5,8 @@ using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.UI;
 
 
@@ -34,13 +36,15 @@ public class PickUp : MonoBehaviour
     public Vector2 minMaxDuration = new Vector2(0.3f, 0.8f);
     private float arcHeight;
     private float throwDuration;
-
-
-
     bool chargeThrow = false;
     public AnimationCurve throwCurve;
     public GameObject throwPosition;
 
+    [Header("Rumble Values")] 
+    [SerializeField] private float time;
+    [SerializeField] private float low;
+    [SerializeField] private float high;
+    
 
     [Header("Holding Components")]
     public List<GameObject> rootedPlants = new();
@@ -78,6 +82,7 @@ public class PickUp : MonoBehaviour
 
     private void Update()
     {
+
         PickupManager();
 
         if (chargeTimer > 0)
@@ -96,7 +101,7 @@ public class PickUp : MonoBehaviour
         {
             OnPickupPress();
         }
-
+        
 
     }
 
@@ -201,6 +206,7 @@ public class PickUp : MonoBehaviour
                 {
                     if (chargeTimer < chargeAmmount)
                     {
+                        StartCoroutine(Rumble(0.12f, 0.15f, 0.15f));
                         chargeTimer++;
                     }
                     else
@@ -267,6 +273,8 @@ public class PickUp : MonoBehaviour
     {
         int randomPlant = Random.Range(0, rootedPlants.Count);
 
+        StartCoroutine(Rumble(0.3f, 0.8f, 0.8f));
+
         holdingPlant = Instantiate(rootedPlants[randomPlant], plants[0].transform.position, rootedPlants[randomPlant].transform.rotation);
         Destroy(plants[0]);
         currentHoldState = PickupState.HoldingPlant;
@@ -275,6 +283,13 @@ public class PickUp : MonoBehaviour
 
         holdingPlant.transform.DOMove(holdPosition.transform.position, 0.5f);
         Invoke(nameof(WaitForPickup), pickupSpeed);
+    }
+
+    IEnumerator Rumble(float rumbleTime, float lowFrequency, float highFrequency)
+    {
+        Gamepad.current.SetMotorSpeeds(lowFrequency, highFrequency);
+        yield return new WaitForSeconds(rumbleTime);
+        Gamepad.current.SetMotorSpeeds(0, 0);
     }
 
     void WaitForPickup()
