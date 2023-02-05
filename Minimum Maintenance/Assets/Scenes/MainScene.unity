@@ -2112,6 +2112,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.6698113
       objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rootedPlants.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rootedPlants.Array.data[1]
+      value: 
+      objectReference: {fileID: 1691661395656459119, guid: dfdf8fba2bdfceb439236b6c85de50d0, type: 3}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rootedPlants.Array.data[2]
+      value: 
+      objectReference: {fileID: 8795148664259437101, guid: deb5484490c4993468ecbca0967059c6, type: 3}
     - target: {fileID: 938874139534309077, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2126,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 6b219ac0bf86a7241b99db97b66136de, type: 3}
     - target: {fileID: 3005172468335569663, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3005172468335569663, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_SizeDelta.x

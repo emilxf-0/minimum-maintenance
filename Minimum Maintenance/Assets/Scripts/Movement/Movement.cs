@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
 
     //Components
     Rigidbody2D rb = null;
-
+    Animator anim = null;
     [Header("Inputs")]
     [Range(1, 2)] public int player;
     
@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     [SerializeField] string horizontal = "Horizontal";
     [SerializeField] string vertical = "Vertical";
     [SerializeField] string dash = "Jump";
+    [SerializeField] string fu = "FU";
 
     [Header("Properties")]
     [SerializeField] float movementSpeed = 3f;
@@ -38,16 +39,18 @@ public class Movement : MonoBehaviour
     bool dashInput;
     bool isDashing = false;
     bool canDash = true;
-
+    float isFu = 0;
     //Conditions
     [HideInInspector] public bool isUpRooting = false;
     [HideInInspector] public bool isStunned = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         horizontal += player.ToString();
         vertical += player.ToString();
         dash += player.ToString();
+        fu += player.ToString();
     }
 
     void Update()
@@ -56,12 +59,13 @@ public class Movement : MonoBehaviour
         dirx = Input.GetAxisRaw(horizontal);
         diry = Input.GetAxisRaw(vertical);
         dashInput = Input.GetButtonDown(dash);
+        isFu = Input.GetAxisRaw(fu);
 
         if (isDashing == false && isUpRooting == false && isStunned == false) //cant control while dashing, maybe want to cancel dashing if youre dasahing into a wall s
         {
             dir = new Vector2(dirx, diry).normalized;
         }
-
+        anim.SetFloat("fu", isFu);
         
 
         if (dir != Vector2.zero)
