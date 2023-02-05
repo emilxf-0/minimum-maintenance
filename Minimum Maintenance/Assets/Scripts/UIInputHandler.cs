@@ -67,7 +67,7 @@ public class UIInputHandler : MonoBehaviour
     public void StartGame()
     {
         FreezeGame(false);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("TutorialScene");
     }
 
     public void GoToMainMenu()
