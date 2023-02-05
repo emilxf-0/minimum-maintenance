@@ -51,14 +51,14 @@ public class HealthManager : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    if (Input.GetKeyDown(KeyCode.L))
-        //       TakeDamageLeftHouse(0.1f);
+        if (Input.GetKey(KeyCode.D))
+        {
+            if (Input.GetKeyDown(KeyCode.L))
+                TakeDamageLeftHouse(0.3f);
 
-        //    if (Input.GetKeyDown(KeyCode.R))
-        //       TakeDamageRightHouse(0.1f);
-        //}
+            if (Input.GetKeyDown(KeyCode.R))
+                TakeDamageRightHouse(0.3f);
+        }
 
         //if (Input.GetKey(KeyCode.H))
         //{
@@ -68,32 +68,36 @@ public class HealthManager : MonoBehaviour
         //    if (Input.GetKeyDown(KeyCode.R))
         //        HealRightHouse(0.05f);
         //}
-
-        leftHealth = gardenHealthLeftHouse.fillAmount;
-        rightHealth = gardenHealthRightHouse.fillAmount;
-
-
+        updateTracker();
     }
 
     public void TakeDamageLeftHouse(float damageTaken)
     {
         gardenHealthLeftHouse.fillAmount -= damageTaken;
+        updateTracker();
     }
     
     public void TakeDamageRightHouse(float damageTaken)
     {
         gardenHealthRightHouse.fillAmount -= damageTaken;
+        updateTracker();
     }
 
     public void HealRightHouse(float pointsToHeal)
     {
         gardenHealthRightHouse.fillAmount += pointsToHeal;
+        updateTracker();
     }
     
     public void HealLeftHouse(float pointsToHeal)
     {
         gardenHealthLeftHouse.fillAmount += pointsToHeal;
+        updateTracker();
     }
-    
+    void updateTracker()
+    {
+        leftHealth = gardenHealthLeftHouse.fillAmount;
+        rightHealth = gardenHealthRightHouse.fillAmount;
+    }
     
 }
