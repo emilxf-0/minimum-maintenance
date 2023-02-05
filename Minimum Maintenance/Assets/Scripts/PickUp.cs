@@ -308,6 +308,8 @@ public class PickUp : MonoBehaviour
         playerAnimations.unRooting = false;
         Destroy(plants[0]);
         currentHoldState = PickupState.Idle;
+        
+        
     }
 
 
