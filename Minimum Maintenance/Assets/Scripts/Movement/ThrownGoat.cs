@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ThrownGoat : MonoBehaviour
 {
+    public GameObject dirtSpray;
     void Start()
     {
         
@@ -13,7 +14,9 @@ public class ThrownGoat : MonoBehaviour
     {
         if (collision.CompareTag("Plant") || collision.CompareTag("PlantGrown") || collision.CompareTag("PlantThrown"))
         {
+            Vector2 dirtLocation = collision.gameObject.transform.position;
             Destroy(collision.gameObject);
+            Destroy(Instantiate(dirtSpray, dirtLocation, Quaternion.identity), .2f);
         }
         
     }
