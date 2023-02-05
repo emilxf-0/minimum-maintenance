@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,23 +10,36 @@ using UnityEngine.SceneManagement;
 public class UIInputHandler : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject winnLeftPanel;
-    [SerializeField] private GameObject winnRightPanel;
+
+    [Header("Win stuff")]
+    [SerializeField] private GameObject winnLeftPoint;
+    [SerializeField] private GameObject winnRightPoint;
+    [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject winnPanel;
+    [SerializeField] private GameObject LosePanel;
 
     private bool gameDone;
 
     private bool gamePaused;
+    bool HealthManagerExists;
+
 
     private void Start()
     {
         gameDone = false;
-        if (winnLeftPanel != null)
+        if (GameOverPanel != null)
         {
-            winnPanel.SetActive(false);
-            winnRightPanel.SetActive(false);
-            winnLeftPanel.SetActive(false);
+            GameOverPanel.SetActive(false);
         }
+
+        if (GameObject.Find("HealthManager") != null)
+        {
+
+            HealthManagerExists = true;
+        }
+        else
+            HealthManagerExists = false;
+
     }
 
     private void Update()
@@ -36,15 +50,15 @@ public class UIInputHandler : MonoBehaviour
                 PauseGame();
         }
 
-        if(HealthManager.Instance != null)
+        if (HealthManagerExists && !gameDone)
         {
-            if(HealthManager.Instance.leftHealth < 0)
-            {
-                SetWinner(true);
-            }
-            else if (HealthManager.Instance.rightHealth < 0)
+            if (HealthManager.Instance.leftHealth <= 0)
             {
                 SetWinner(false);
+            }
+            else if (HealthManager.Instance.rightHealth <= 0)
+            {
+                SetWinner(true);
             }
         }
 
@@ -109,19 +123,27 @@ public class UIInputHandler : MonoBehaviour
 
     private void SetWinner(bool isLeft)
     {
+        gameDone = true;
+        GameOverPanel.SetActive(true);
         FreezeGame(true);
-        if(isLeft)
+        Ease setEase = Ease.OutBounce;
+        if (isLeft)
         {
-            winnRightPanel.SetActive(false);
-            winnLeftPanel.SetActive(true);
+            winnPanel.transform.position = winnLeftPoint.transform.position + new Vector3(0, 10);
+            LosePanel.transform.position = winnRightPoint.transform.position + new Vector3(0, 10);
+
+            winnPanel.transform.DOMove(winnLeftPoint.transform.position, 2).SetEase(setEase).SetUpdate(true);
+            LosePanel.transform.DOMove(winnRightPoint.transform.position, 2).SetEase(setEase).SetUpdate(true);
         }
         else
         {
-            winnRightPanel.SetActive(true);
-            winnLeftPanel.SetActive(false);
+            LosePanel.transform.position = winnLeftPoint.transform.position + new Vector3(0, 10);
+            winnPanel.transform.position = winnRightPoint.transform.position + new Vector3(0, 10);
+
+            LosePanel.transform.DOMove(winnLeftPoint.transform.position, 2).SetEase(setEase).SetUpdate(true);
+            winnPanel.transform.DOMove(winnRightPoint.transform.position, 2).SetEase(setEase).SetUpdate(true);
         }
 
-        winnPanel.SetActive(false);
     }
 
 
