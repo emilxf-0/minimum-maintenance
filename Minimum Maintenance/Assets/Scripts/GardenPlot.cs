@@ -66,7 +66,7 @@ public class GardenPlot : MonoBehaviour
 
     private void SpawnWeed()
     {
-        Bounds bounds = GetComponent<PolygonCollider2D>().bounds;
+        Bounds bounds = GetComponent<Collider2D>().bounds;
         Instantiate(weedObj, RandomizeSpawnPosition(bounds), gameObject.transform.rotation);
     }
 

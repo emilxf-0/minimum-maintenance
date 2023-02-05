@@ -6,6 +6,7 @@ using UnityEngine;
 public class Throwable : MonoBehaviour
 {
     private const string KEY_TAG_PLAYER = "Player";
+    private const string KEY_TAG_OUTOFBOUNDS = "OutOfBounds";
     private const string KEY_TAG_GROUND = "Ground";
     private const string KEY_TAG_GROWNWEED = "PlantGrown";
     private const string KEY_TAG_THROWABLE = "PlantThrown";
@@ -41,6 +42,10 @@ public class Throwable : MonoBehaviour
             }
             else if(isGoat == false)
                 garden.HitByWeed(gameObject.transform.position);
+            Destroy(gameObject);
+        }
+        else if(hit.transform.CompareTag(KEY_TAG_OUTOFBOUNDS))
+        {
             Destroy(gameObject);
         }
         else if (hit.transform.CompareTag(KEY_TAG_GROWNWEED) || hit.transform.tag == KEY_TAG_THROWABLE)
