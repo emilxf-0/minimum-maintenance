@@ -39,12 +39,7 @@ public class UIInputHandler : MonoBehaviour
         }
 
         gameDone = false;
-<<<<<<< HEAD
 
-
-=======
-      
->>>>>>> 1265ade91b258842fc426778db1cd595932c437b
         if (GameOverPanel != null)
         {
             GameOverPanel.SetActive(false);
@@ -58,22 +53,11 @@ public class UIInputHandler : MonoBehaviour
         }
         else
             HealthManagerExists = false;
-<<<<<<< HEAD
-=======
-       
->>>>>>> 1265ade91b258842fc426778db1cd595932c437b
-
     }
 
     private void Update()
     {
-<<<<<<< HEAD
         if (!playingIntro)
-=======
-       
-
-        if (pauseMenu != null)
->>>>>>> 1265ade91b258842fc426778db1cd595932c437b
         {
 
             if (pauseMenu != null)
