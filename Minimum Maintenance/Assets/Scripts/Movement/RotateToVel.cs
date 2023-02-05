@@ -6,7 +6,7 @@ using UnityEngine;
 public class RotateToVel : MonoBehaviour
 {
     private Movement move;
-    private float rotationSpeed = 10;
+    public float rotationSpeed = 1000;
 
 
     private void Start()
@@ -19,9 +19,9 @@ public class RotateToVel : MonoBehaviour
 
         if(move.dir != Vector2.zero)
         {
-            quaternion toRot = Quaternion.LookRotation(move.dir, Vector3.forward);
+            Quaternion targetRot = Quaternion.LookRotation(Vector3.forward, move.dir);
 
-            transform.rotation = Quaternion.RotateTowards(transform.localRotation, toRot, rotationSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, rotationSpeed * Time.deltaTime);
         }
 
     }

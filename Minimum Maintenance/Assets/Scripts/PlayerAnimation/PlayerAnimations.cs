@@ -21,33 +21,9 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Update()
     {
-       
-        //if(rb.velocity.x > 0)
-        //{
-        //    anim.SetFloat("velocity", 1);
-        //}
-        //else if(rb.velocity.x < 0)
-        //{
-        //    anim.SetFloat("velocity", 1);
-        //}
-        //else
-        //{
-        //    anim.SetFloat("velocity", -1);
-        //}
+
         anim.SetFloat("velocity",rb.velocity.sqrMagnitude);
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            unRooting = true;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            unRooting = false;
-            isHolding = true;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            isHolding= false;
-        }
+
 
         if(rb.velocity.x > 0)
         {
