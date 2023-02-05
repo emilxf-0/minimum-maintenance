@@ -26,7 +26,7 @@ public class MusicManager : MonoBehaviour
 
     private void StartMusic()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex is 0 or 1)
         {
             isMenu = true;
             musicSource.clip = backgroundMusicMenu;

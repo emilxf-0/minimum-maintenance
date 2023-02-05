@@ -11,6 +11,8 @@ public class Throwable : MonoBehaviour
     private const string KEY_TAG_GROWNWEED = "PlantGrown";
     private const string KEY_TAG_THROWABLE = "PlantThrown";
 
+    public GameObject dirtSpray;
+
     public bool isSunflower = false;
     public bool isGoat = false;
 
@@ -31,6 +33,9 @@ public class Throwable : MonoBehaviour
             Destroy(gameObject);
             MusicManager musicManager = FindObjectOfType<MusicManager>();
             musicManager.PlayImpact();
+            
+            if (dirtSpray != null)
+                Destroy(Instantiate(dirtSpray, hit.transform.gameObject.transform.position + Vector3.up, Quaternion.identity), 2f);
         }
         else if (hit.transform.CompareTag(KEY_TAG_GROUND))
         {

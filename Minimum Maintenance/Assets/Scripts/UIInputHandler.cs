@@ -39,13 +39,17 @@ public class UIInputHandler : MonoBehaviour
         }
 
         gameDone = false;
+<<<<<<< HEAD
 
 
+=======
+      
+>>>>>>> 1265ade91b258842fc426778db1cd595932c437b
         if (GameOverPanel != null)
         {
             GameOverPanel.SetActive(false);
         }
-        Debug.Log(gameDone);
+        
 
         if (GameObject.Find("HealthManager") != null)
         {
@@ -54,12 +58,22 @@ public class UIInputHandler : MonoBehaviour
         }
         else
             HealthManagerExists = false;
+<<<<<<< HEAD
+=======
+       
+>>>>>>> 1265ade91b258842fc426778db1cd595932c437b
 
     }
 
     private void Update()
     {
+<<<<<<< HEAD
         if (!playingIntro)
+=======
+       
+
+        if (pauseMenu != null)
+>>>>>>> 1265ade91b258842fc426778db1cd595932c437b
         {
 
             if (pauseMenu != null)
@@ -108,10 +122,11 @@ public class UIInputHandler : MonoBehaviour
     public void StartGame()
     {
         FreezeGame(false);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("TutorialScene");
         HealthManager.Instance.leftHealth = 1f;
         HealthManager.Instance.rightHealth = 1f;
         gameDone = false;
+
     }
 
     public void GoToMainMenu()
@@ -173,8 +188,12 @@ public class UIInputHandler : MonoBehaviour
     private void SetWinner(bool isLeft)
     {
         Gamepad[] allgamePads = Gamepad.all.ToArray();
-        allgamePads[0].SetMotorSpeeds(0, 0);
-        allgamePads[1].SetMotorSpeeds(0, 0);
+        if(allgamePads.Length > 0)
+        {
+            allgamePads[0]?.SetMotorSpeeds(0, 0);
+            allgamePads[1]?.SetMotorSpeeds(0, 0);
+        }
+        
         gameDone = true;
         GameOverPanel.SetActive(true);
         FreezeGame(true);

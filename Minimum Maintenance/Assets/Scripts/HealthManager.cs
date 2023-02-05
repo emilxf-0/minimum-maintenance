@@ -16,7 +16,7 @@ public class HealthManager : MonoBehaviour
         {
             if (instance == null)
             {
-                Debug.Log("Health manager doesn't exist");
+               //Debug.Log("Health manager doesn't exist");
             }
             
             return instance;
@@ -54,14 +54,14 @@ public class HealthManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            if (Input.GetKeyDown(KeyCode.L))
-                TakeDamageLeftHouse(0.3f);
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    if (Input.GetKeyDown(KeyCode.L))
+        //        TakeDamageLeftHouse(0.3f);
 
-            if (Input.GetKeyDown(KeyCode.R))
-                TakeDamageRightHouse(0.3f);
-        }
+        //    if (Input.GetKeyDown(KeyCode.R))
+        //        TakeDamageRightHouse(0.3f);
+        //}
 
         //if (Input.GetKey(KeyCode.H))
         //{

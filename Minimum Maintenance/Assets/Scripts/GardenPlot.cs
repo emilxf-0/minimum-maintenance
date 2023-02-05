@@ -58,7 +58,7 @@ public class GardenPlot : MonoBehaviour
         {
             SpawnWeed();
             weedSpawnInterval = adjustedSpawnInterval;
-            Debug.Log("Spawning weed");
+           
         }
         else
             weedSpawnInterval -= 1 * Time.deltaTime;
