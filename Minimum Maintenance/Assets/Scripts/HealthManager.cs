@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.Design;
 using UnityEngine;
 using UnityEngine.AI;
+using DG.Tweening;
 using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
@@ -24,6 +25,9 @@ public class HealthManager : MonoBehaviour
 
     [SerializeField] private Image gardenHealthLeftHouse;
     [SerializeField] private Image gardenHealthRightHouse;
+    
+    [SerializeField] private Transform healthBarLeftHouse;
+    [SerializeField] private Transform healthBarRightHouse;
 
     private float playerGardenHealth = 1f;
     private float maxHealth = 1f;
@@ -41,10 +45,7 @@ public class HealthManager : MonoBehaviour
         {
             instance = this;
         }
-    }
-    
-    private void Start()
-    {
+        
         gardenHealthLeftHouse.fillAmount = maxHealth;
         gardenHealthRightHouse.fillAmount = maxHealth;
     }
@@ -69,18 +70,25 @@ public class HealthManager : MonoBehaviour
         //        HealRightHouse(0.05f);
         //}
         updateTracker();
+
+        leftHealth = gardenHealthLeftHouse.fillAmount;
+        rightHealth = gardenHealthRightHouse.fillAmount;
+        
+
     }
 
     public void TakeDamageLeftHouse(float damageTaken)
     {
         gardenHealthLeftHouse.fillAmount -= damageTaken;
         updateTracker();
+        healthBarLeftHouse.transform.DOShakePosition(0.5f, 8f, 10, 50f, true);
     }
     
     public void TakeDamageRightHouse(float damageTaken)
     {
         gardenHealthRightHouse.fillAmount -= damageTaken;
         updateTracker();
+        healthBarRightHouse.transform.DOShakePosition(0.5f, 8f, 10, 50f, true);
     }
 
     public void HealRightHouse(float pointsToHeal)
