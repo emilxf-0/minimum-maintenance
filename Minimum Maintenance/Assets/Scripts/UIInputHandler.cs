@@ -29,12 +29,12 @@ public class UIInputHandler : MonoBehaviour
     {
         FreezeGame(false);
         gameDone = false;
-        Debug.Log(gameDone);
+      
         if (GameOverPanel != null)
         {
             GameOverPanel.SetActive(false);
         }
-        Debug.Log(gameDone);
+        
 
         if (GameObject.Find("HealthManager") != null)
         {
@@ -43,13 +43,13 @@ public class UIInputHandler : MonoBehaviour
         }
         else
             HealthManagerExists = false;
-        Debug.Log(gameDone);
+       
 
     }
 
     private void Update()
     {
-        Debug.Log(gameDone);
+       
 
         if (pauseMenu != null)
         {
