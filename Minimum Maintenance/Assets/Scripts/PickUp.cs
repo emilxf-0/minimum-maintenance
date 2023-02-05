@@ -287,9 +287,12 @@ public class PickUp : MonoBehaviour
 
     IEnumerator Rumble(float rumbleTime, float lowFrequency, float highFrequency)
     {
-        Gamepad.current.SetMotorSpeeds(lowFrequency, highFrequency);
+        Gamepad[] allgamePads = Gamepad.all.ToArray();
+        allgamePads[playerNum-1].SetMotorSpeeds(lowFrequency, highFrequency);
+       // Gamepad.current.SetMotorSpeeds(lowFrequency, highFrequency);
         yield return new WaitForSeconds(rumbleTime);
-        Gamepad.current.SetMotorSpeeds(0, 0);
+        //Gamepad.current.SetMotorSpeeds(0, 0);
+        allgamePads[playerNum -1].SetMotorSpeeds(0, 0);
     }
 
     void WaitForPickup()

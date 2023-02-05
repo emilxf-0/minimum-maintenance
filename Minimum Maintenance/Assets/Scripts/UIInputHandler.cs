@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Assertions.Must;
 using UnityEngine.SceneManagement;
 
@@ -23,14 +24,17 @@ public class UIInputHandler : MonoBehaviour
     private bool gamePaused;
     bool HealthManagerExists;
 
-
+  
     private void Start()
     {
+        FreezeGame(false);
         gameDone = false;
+        Debug.Log(gameDone);
         if (GameOverPanel != null)
         {
             GameOverPanel.SetActive(false);
         }
+        Debug.Log(gameDone);
 
         if (GameObject.Find("HealthManager") != null)
         {
@@ -39,11 +43,14 @@ public class UIInputHandler : MonoBehaviour
         }
         else
             HealthManagerExists = false;
+        Debug.Log(gameDone);
 
     }
 
     private void Update()
     {
+        Debug.Log(gameDone);
+
         if (pauseMenu != null)
         {
             if (Input.GetButtonDown("Cancel"))
@@ -61,13 +68,15 @@ public class UIInputHandler : MonoBehaviour
                 SetWinner(true);
             }
         }
-
     }
 
     public void StartGame()
     {
         FreezeGame(false);
         SceneManager.LoadScene("MainScene");
+        HealthManager.Instance.leftHealth = 1f;
+        HealthManager.Instance.rightHealth = 1f;
+        gameDone = false;
     }
 
     public void GoToMainMenu()
@@ -80,8 +89,13 @@ public class UIInputHandler : MonoBehaviour
     public void ResetMatch()
     {
         FreezeGame(false);
+        HealthManager.Instance.leftHealth = 1f;
+        HealthManager.Instance.rightHealth = 1f;
+        gameDone = false;
         var scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene);
+        
+
     }
 
     public void QuitGame()
@@ -123,6 +137,9 @@ public class UIInputHandler : MonoBehaviour
 
     private void SetWinner(bool isLeft)
     {
+        Gamepad[] allgamePads = Gamepad.all.ToArray();
+        allgamePads[0].SetMotorSpeeds(0, 0);
+        allgamePads[1].SetMotorSpeeds(0, 0);
         gameDone = true;
         GameOverPanel.SetActive(true);
         FreezeGame(true);
