@@ -19,17 +19,28 @@ public class UIInputHandler : MonoBehaviour
     [SerializeField] private GameObject winnPanel;
     [SerializeField] private GameObject LosePanel;
 
+    [Header("Intro")]
+    [SerializeField] private GameObject IntroPanel;
+    private bool playingIntro = false;
+
     private bool gameDone;
 
     private bool gamePaused;
     bool HealthManagerExists;
 
-  
+
     private void Start()
     {
-        FreezeGame(false);
+
+        if (!playingIntro && IntroPanel != null)
+        {
+            IntroPanel.transform.position =  Vector3.zero;
+            StartCoroutine(PlayIntoScene());
+        }
+
         gameDone = false;
-        Debug.Log(gameDone);
+
+
         if (GameOverPanel != null)
         {
             GameOverPanel.SetActive(false);
@@ -43,31 +54,55 @@ public class UIInputHandler : MonoBehaviour
         }
         else
             HealthManagerExists = false;
-        Debug.Log(gameDone);
 
     }
 
     private void Update()
     {
-        Debug.Log(gameDone);
-
-        if (pauseMenu != null)
+        if (!playingIntro)
         {
-            if (Input.GetButtonDown("Cancel"))
-                PauseGame();
-        }
 
-        if (HealthManagerExists && !gameDone)
-        {
-            if (HealthManager.Instance.leftHealth <= 0)
+            if (pauseMenu != null)
             {
-                SetWinner(false);
+                if (Input.GetButtonDown("Cancel"))
+                    PauseGame();
             }
-            else if (HealthManager.Instance.rightHealth <= 0)
+
+            if (HealthManagerExists && !gameDone)
             {
-                SetWinner(true);
+                if (HealthManager.Instance.leftHealth <= 0)
+                {
+                    SetWinner(false);
+                }
+                else if (HealthManager.Instance.rightHealth <= 0)
+                {
+                    SetWinner(true);
+                }
             }
         }
+    }
+
+    IEnumerator PlayIntoScene()
+    {
+
+        playingIntro = true;
+        float trans1 = 0.5f;
+        float trans2 = 0.5f;
+        FreezeGame(true);
+
+        yield return new WaitForSecondsRealtime(trans1);
+
+        IntroPanel.GetComponent<Animator>().SetTrigger("StartAnim");
+
+        yield return new WaitForSecondsRealtime(1.8f);
+
+        IntroPanel.transform.DOMove(Vector3.zero + new Vector3(0, -10), trans2).SetEase(Ease.Linear).SetUpdate(true);
+
+        yield return new WaitForSecondsRealtime(trans2);
+        IntroPanel.GetComponent<Animator>().SetTrigger("EndAnim");
+        playingIntro = false;
+        FreezeGame(false);
+
     }
 
     public void StartGame()
@@ -94,7 +129,7 @@ public class UIInputHandler : MonoBehaviour
         gameDone = false;
         var scene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(scene);
-        
+
 
     }
 
