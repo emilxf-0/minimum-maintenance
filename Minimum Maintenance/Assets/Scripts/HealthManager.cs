@@ -45,10 +45,7 @@ public class HealthManager : MonoBehaviour
         {
             instance = this;
         }
-    }
-    
-    private void Start()
-    {
+        
         gardenHealthLeftHouse.fillAmount = maxHealth;
         gardenHealthRightHouse.fillAmount = maxHealth;
     }
