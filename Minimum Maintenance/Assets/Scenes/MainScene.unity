@@ -2026,22 +2026,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 304363994, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: m_Color.a
-      value: 0.27058825
-      objectReference: {fileID: 0}
-    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: rootedPlants.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: rootedPlants.Array.data[1]
-      value: 
-      objectReference: {fileID: 8795148664259437101, guid: deb5484490c4993468ecbca0967059c6, type: 3}
-    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: rootedPlants.Array.data[2]
-      value: 
-      objectReference: {fileID: 1691661395656459119, guid: dfdf8fba2bdfceb439236b6c85de50d0, type: 3}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2094,26 +2078,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 7617383922114823248, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: m_Color.a
-      value: 0.5019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617383922114823248, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617383922114823248, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617383922114823248, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7617383922114823248, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
-      propertyPath: m_SortingOrder
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
 --- !u!1001 &1207039488
