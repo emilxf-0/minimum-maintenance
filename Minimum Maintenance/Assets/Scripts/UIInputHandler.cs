@@ -138,8 +138,8 @@ public class UIInputHandler : MonoBehaviour
     private void SetWinner(bool isLeft)
     {
         Gamepad[] allgamePads = Gamepad.all.ToArray();
-        allgamePads[0].SetMotorSpeeds(0, 0);
-        allgamePads[1].SetMotorSpeeds(0, 0);
+        allgamePads[0]?.SetMotorSpeeds(0, 0);
+        allgamePads[1]?.SetMotorSpeeds(0, 0);
         gameDone = true;
         GameOverPanel.SetActive(true);
         FreezeGame(true);
