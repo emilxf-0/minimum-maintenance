@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: playerNum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -95,6 +99,18 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6382189504349197892, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382189504349197892, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382189504349197892, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
 --- !u!1 &3710434747721944461 stripped
@@ -122,18 +138,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2055545500877609841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3710434747721944461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 360d28139f5f08f4cb1813e930bc21a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: Player1
-  isGrabbing: 0
-  isHolding: 0

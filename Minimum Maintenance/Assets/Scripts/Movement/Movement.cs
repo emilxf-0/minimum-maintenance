@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
     //Movement
     float dirx;
     float diry;
-    Vector2 dir = Vector2.zero;
+    public Vector2 dir = Vector2.zero;
     Vector2 lastDir = new Vector2(1, 0);
 
     // Dashing

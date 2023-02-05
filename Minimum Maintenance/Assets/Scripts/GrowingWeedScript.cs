@@ -60,7 +60,6 @@ public class GrowingWeedScript : MonoBehaviour
     {
         if (growTimer >= 5f && growState <= 1)
         {
-            Debug.Log("Weed grown+1");
             growState++;
             spriteRenderer.sprite = growStateSprites[growState];
             growTimer = 0f;

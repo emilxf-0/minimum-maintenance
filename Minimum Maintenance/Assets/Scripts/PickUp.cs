@@ -17,7 +17,7 @@ public class PickUp : MonoBehaviour
         UpprootingPlant,
         HoldingPlant
     }
-    
+
     public PickupState currentHoldState;
 
     [Range(1f, 2f)]
@@ -65,7 +65,7 @@ public class PickUp : MonoBehaviour
         pickupInput = pickupInput + playerNum;
         dashInput = dashInput + playerNum;
         arcHeight = minMaxHeight.x;
-        throwPosition.transform.localPosition = new Vector3(minMaxDistance.x, 0);
+        throwPosition.transform.localPosition = new Vector3(0, minMaxDistance.x);
         throwPosition.SetActive(false);
         currentThrowCharge = 0;
 
@@ -78,7 +78,6 @@ public class PickUp : MonoBehaviour
 
     private void Update()
     {
-        PickupManager();
 
         if (chargeTimer > 0)
         {
@@ -96,6 +95,7 @@ public class PickUp : MonoBehaviour
         {
             OnPickupPress();
         }
+        PickupManager();
 
 
     }
@@ -143,7 +143,9 @@ public class PickUp : MonoBehaviour
                     playerAnimations.isHolding = true;
                     if (isHolding)
                     {
-                         playerAnimations.unRooting = false;
+                        throwPosition.SetActive(true);
+
+                        playerAnimations.unRooting = false;
                         holdingPlant.transform.position = holdPosition.transform.position;
 
 
@@ -151,7 +153,7 @@ public class PickUp : MonoBehaviour
                         {
                             currentThrowCharge += Time.deltaTime * throwChargeSpeed;
 
-                            throwPosition.transform.localPosition = new Vector3(Mathf.Lerp(minMaxDistance.x, minMaxDistance.y, currentThrowCharge), 0);
+                            throwPosition.transform.localPosition = new Vector3(0, Mathf.Lerp(minMaxDistance.x, minMaxDistance.y, currentThrowCharge));
                             arcHeight = Mathf.Lerp(minMaxHeight.x, minMaxHeight.y, currentThrowCharge);
                             throwDuration = Mathf.Lerp(minMaxDuration.x, minMaxDuration.y, currentThrowCharge);
                         }
@@ -166,7 +168,7 @@ public class PickUp : MonoBehaviour
 
                             currentThrowCharge = 0;
                             throwPosition.SetActive(false);
-                            throwPosition.transform.localPosition = new Vector3(minMaxDistance.x, 0);
+                            throwPosition.transform.localPosition = new Vector3(0, minMaxDistance.x);
                             arcHeight = minMaxHeight.x;
                             throwDuration = minMaxDuration.x;
 
@@ -211,8 +213,8 @@ public class PickUp : MonoBehaviour
                 break;
             case PickupState.HoldingPlant:
                 {
-                    chargeThrow = true;
-                    throwPosition.SetActive(true);
+                    if (!chargeThrow && isHolding)
+                        chargeThrow = true;
                 }
                 break;
             default:
@@ -257,7 +259,7 @@ public class PickUp : MonoBehaviour
 
         if (playerNum == 1)
             HealthManager.Instance.HealLeftHouse(0.025f);
-        
+
         chargeTimer = 0;
         chargeImage.fillAmount = 0;
 
