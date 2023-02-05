@@ -1163,6 +1163,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
+      propertyPath: thrownGoat
+      value: 
+      objectReference: {fileID: 3814983594479321572, guid: cd90dbb077c64104cb5ea0de8a25c8d0, type: 3}
+    - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
       propertyPath: thrownWeed
       value: 
       objectReference: {fileID: 2858780635720633684, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
@@ -1170,6 +1174,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 1565833172}
+    - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
+      propertyPath: thrownSunflower
+      value: 
+      objectReference: {fileID: 8211856699114323595, guid: dbc165de7e024f84a9983c148f5b915e, type: 3}
     - target: {fileID: 6782065908106880065, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
       propertyPath: m_Name
       value: GardenPlotLeft
@@ -1470,6 +1478,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rootedPlants.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rootedPlants.Array.data[1]
+      value: 
+      objectReference: {fileID: 8795148664259437101, guid: deb5484490c4993468ecbca0967059c6, type: 3}
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: rootedPlants.Array.data[2]
+      value: 
+      objectReference: {fileID: 1691661395656459119, guid: dfdf8fba2bdfceb439236b6c85de50d0, type: 3}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1531,6 +1551,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187889501389074583, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: rootedPlants.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 187889501389074583, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: rootedPlants.Array.data[1]
+      value: 
+      objectReference: {fileID: 8795148664259437101, guid: deb5484490c4993468ecbca0967059c6, type: 3}
+    - target: {fileID: 187889501389074583, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: rootedPlants.Array.data[2]
+      value: 
+      objectReference: {fileID: 1691661395656459119, guid: dfdf8fba2bdfceb439236b6c85de50d0, type: 3}
     - target: {fileID: 3710434747721944449, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1943,6 +1975,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
+      propertyPath: thrownGoat
+      value: 
+      objectReference: {fileID: 3814983594479321572, guid: cd90dbb077c64104cb5ea0de8a25c8d0, type: 3}
+    - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
       propertyPath: thrownWeed
       value: 
       objectReference: {fileID: 2858780635720633684, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
@@ -1950,6 +1986,10 @@ PrefabInstance:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 296993181}
+    - target: {fileID: 6782065908106880064, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
+      propertyPath: thrownSunflower
+      value: 
+      objectReference: {fileID: 8211856699114323595, guid: dbc165de7e024f84a9983c148f5b915e, type: 3}
     - target: {fileID: 6782065908106880065, guid: 2d7bf8e278c9b0148a6f2692cff508aa, type: 3}
       propertyPath: m_Name
       value: GardenPlotRight

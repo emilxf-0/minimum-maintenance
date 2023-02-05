@@ -11,6 +11,8 @@ public class Throwable : MonoBehaviour
     private const string KEY_TAG_THROWABLE = "PlantThrown";
 
     public bool isSunflower = false;
+    public bool isGoat = false;
+
     public void InvokeLanding(float timeToStart)
     {
         Invoke(nameof(LandingCheck), timeToStart);
@@ -22,6 +24,7 @@ public class Throwable : MonoBehaviour
 
         if (hit.transform.CompareTag(KEY_TAG_PLAYER))
         {
+            TrySpawnGoat(hit);
             Movement movement = hit.collider.GetComponent<Movement>();
             movement.Stun();
             Destroy(gameObject);
@@ -30,18 +33,32 @@ public class Throwable : MonoBehaviour
         }
         else if (hit.transform.CompareTag(KEY_TAG_GROUND))
         {
+            TrySpawnGoat(hit);
             GardenPlot garden = hit.collider.GetComponent<GardenPlot>();
             if(isSunflower == true)
             {
                 garden.HitBySunFlower(gameObject.transform.position);
             }
-            else
+            else if(isGoat == false)
                 garden.HitByWeed(gameObject.transform.position);
             Destroy(gameObject);
         }
         else if (hit.transform.CompareTag(KEY_TAG_GROWNWEED) || hit.transform.tag == KEY_TAG_THROWABLE)
+        {
+            TrySpawnGoat(hit);
             Destroy(gameObject);
+        }
         else
             Destroy(gameObject);
+       
+    }
+    private void TrySpawnGoat(RaycastHit2D hit)
+    {
+        if (isGoat == true)
+        {
+            
+            GardenPlot garden = FindObjectOfType<GardenPlot>();
+            garden?.HitBySunGoat(gameObject.transform.position);
+        }
     }
 }
