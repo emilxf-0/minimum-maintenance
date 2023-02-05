@@ -47,7 +47,9 @@ public class HealthManager : MonoBehaviour
         }
         
         gardenHealthLeftHouse.fillAmount = maxHealth;
-        gardenHealthRightHouse.fillAmount = maxHealth;
+        gardenHealthRightHouse.fillAmount = maxHealth;        
+        updateTracker();
+
     }
 
     private void Update()
@@ -69,7 +71,7 @@ public class HealthManager : MonoBehaviour
         //    if (Input.GetKeyDown(KeyCode.R))
         //        HealRightHouse(0.05f);
         //}
-        updateTracker();
+        //updateTracker();
 
         leftHealth = gardenHealthLeftHouse.fillAmount;
         rightHealth = gardenHealthRightHouse.fillAmount;
@@ -80,27 +82,23 @@ public class HealthManager : MonoBehaviour
     public void TakeDamageLeftHouse(float damageTaken)
     {
         gardenHealthLeftHouse.fillAmount -= damageTaken;
-        updateTracker();
         healthBarLeftHouse.transform.DOShakePosition(0.5f, 8f, 10, 50f, true);
     }
     
     public void TakeDamageRightHouse(float damageTaken)
     {
         gardenHealthRightHouse.fillAmount -= damageTaken;
-        updateTracker();
         healthBarRightHouse.transform.DOShakePosition(0.5f, 8f, 10, 50f, true);
     }
 
     public void HealRightHouse(float pointsToHeal)
     {
         gardenHealthRightHouse.fillAmount += pointsToHeal;
-        updateTracker();
     }
     
     public void HealLeftHouse(float pointsToHeal)
     {
         gardenHealthLeftHouse.fillAmount += pointsToHeal;
-        updateTracker();
     }
     void updateTracker()
     {
