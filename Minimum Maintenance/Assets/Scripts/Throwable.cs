@@ -10,6 +10,7 @@ public class Throwable : MonoBehaviour
     private const string KEY_TAG_GROWNWEED = "PlantGrown";
     private const string KEY_TAG_THROWABLE = "PlantThrown";
 
+    public bool isSunflower = false;
     public void InvokeLanding(float timeToStart)
     {
         Invoke(nameof(LandingCheck), timeToStart);
@@ -30,7 +31,12 @@ public class Throwable : MonoBehaviour
         else if (hit.transform.CompareTag(KEY_TAG_GROUND))
         {
             GardenPlot garden = hit.collider.GetComponent<GardenPlot>();
-            garden.HitByWeed(gameObject.transform.position);
+            if(isSunflower == true)
+            {
+                garden.HitBySunFlower(gameObject.transform.position);
+            }
+            else
+                garden.HitByWeed(gameObject.transform.position);
             Destroy(gameObject);
         }
         else if (hit.transform.CompareTag(KEY_TAG_GROWNWEED) || hit.transform.tag == KEY_TAG_THROWABLE)

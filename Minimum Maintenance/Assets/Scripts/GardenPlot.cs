@@ -9,6 +9,7 @@ public class GardenPlot : MonoBehaviour
 {
     [SerializeField] private GameObject weedObj;
     [SerializeField] private GameObject thrownWeed;
+    [SerializeField] private GameObject thrownSunflower;
     [SerializeField] private float adjustedSpawnInterval = 5f;
     [SerializeField] private SpriteRenderer spriteRenderer;
     
@@ -78,6 +79,14 @@ public class GardenPlot : MonoBehaviour
         if (harderByTime)
         {
             
+        }
+    }
+    public void HitBySunFlower(Vector2 hitLocation)
+    {
+        Instantiate(thrownSunflower, hitLocation, transform.rotation);
+        if (harderByTime)
+        {
+
         }
     }
 }

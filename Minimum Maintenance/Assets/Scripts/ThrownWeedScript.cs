@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class ThrownWeedScript : MonoBehaviour
 {
-    private bool onLeftField;
+    protected bool onLeftField;
     private float damageTimer;
     private float damage;
     

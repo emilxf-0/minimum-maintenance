@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6222301226784666591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.6775136
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.02401702
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 759319941480102208, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2858780635720633684, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_Name
+      value: ThrownSunFlower Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236160797342844395, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f5970f0e9a80b984aad743fe79ff7fbe, type: 3}
+    - target: {fileID: 8236160797342844395, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236160797342844395, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8236160797342844395, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1387623285, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+    - {fileID: 7499239605672257055, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+--- !u!1 &8211856699114323595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2858780635720633684, guid: 13f2746420c8d0e40b3b48c6db9a9148, type: 3}
+  m_PrefabInstance: {fileID: 6222301226784666591}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7914132973390935162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8211856699114323595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c0e819055c1114092f6dfa35d9b5b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
