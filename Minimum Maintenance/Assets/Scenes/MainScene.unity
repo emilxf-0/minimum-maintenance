@@ -719,6 +719,14 @@ PrefabInstance:
       value: HealthManager
       objectReference: {fileID: 0}
     - target: {fileID: 677096906361335745, guid: 8f80590aeeb381246a204940baa049ec, type: 3}
+      propertyPath: healthBarLeftHouse
+      value: 
+      objectReference: {fileID: 485845103}
+    - target: {fileID: 677096906361335745, guid: 8f80590aeeb381246a204940baa049ec, type: 3}
+      propertyPath: healthBarRightHouse
+      value: 
+      objectReference: {fileID: 392017800}
+    - target: {fileID: 677096906361335745, guid: 8f80590aeeb381246a204940baa049ec, type: 3}
       propertyPath: gardenHealthLeftHouse
       value: 
       objectReference: {fileID: 1972623487}
@@ -1006,6 +1014,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1282816338}
     m_Modifications:
+    - target: {fileID: -3454917448461999391, guid: 8411ccbb0ebe2304da54c426d359a450, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 485845103}
     - target: {fileID: 6443604764099687031, guid: 8411ccbb0ebe2304da54c426d359a450, type: 3}
       propertyPath: healthBar
       value: 
@@ -2349,7 +2361,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 105
+    m_Top: 75
     m_Bottom: 0
   m_ChildAlignment: 4
   m_Spacing: 0
