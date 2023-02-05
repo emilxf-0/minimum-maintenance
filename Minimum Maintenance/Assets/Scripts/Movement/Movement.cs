@@ -138,4 +138,6 @@ public class Movement : MonoBehaviour
         dash.GetComponent<SpriteRenderer>().flipX = shouldFlip;
         Destroy(dash, .4f);
     }
+    
+    
 }
