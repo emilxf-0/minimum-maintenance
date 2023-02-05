@@ -162,7 +162,6 @@ public class PickUp : MonoBehaviour
                         {
                             chargeThrow = false;
                             currentHoldState = PickupState.Idle;
-
                             holdingPlant.transform.DOJump(throwPosition.transform.position, arcHeight, 1, throwDuration).SetEase(throwCurve);
                             holdingPlant.GetComponent<Throwable>().InvokeLanding(throwDuration);
 
