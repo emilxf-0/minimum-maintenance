@@ -35,7 +35,7 @@ public class Throwable : MonoBehaviour
             musicManager.PlayImpact();
             
             if (dirtSpray != null)
-                Destroy(Instantiate(dirtSpray, hit.transform.gameObject.transform.position + Vector3.up, Quaternion.identity), 2f);
+                Destroy(Instantiate(dirtSpray, hit.transform.gameObject.transform.position + Vector3.up, Quaternion.identity), 0.2f);
         }
         else if (hit.transform.CompareTag(KEY_TAG_GROUND))
         {

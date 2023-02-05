@@ -39,6 +39,7 @@ public class PickUp : MonoBehaviour
     bool chargeThrow = false;
     public AnimationCurve throwCurve;
     public GameObject throwPosition;
+    public GameObject smokePuff;
 
     [Header("Rumble Values")] 
     [SerializeField] private float time;
@@ -251,7 +252,13 @@ public class PickUp : MonoBehaviour
             int randNum = Random.Range(0, 5);
 
             if (randNum == 0)
+            {
                 DestroyPlant();
+                if (smokePuff != null)
+                {
+                    Instantiate(smokePuff, transform.position + Vector3.up, Quaternion.identity);
+                }
+            }
             else
                 PickupPlant();
 
@@ -308,6 +315,8 @@ public class PickUp : MonoBehaviour
         playerAnimations.unRooting = false;
         Destroy(plants[0]);
         currentHoldState = PickupState.Idle;
+        
+        
     }
 
 

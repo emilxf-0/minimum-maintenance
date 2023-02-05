@@ -2135,6 +2135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 420044883, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
+      propertyPath: smokePuff
+      value: 
+      objectReference: {fileID: 8927804748159552002, guid: 8c131446a605c784d80ff91a314f2d4f, type: 3}
     - target: {fileID: 3595447274385235269, guid: 20ff98100aa85584e8136e63130dadc3, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2196,6 +2200,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 187889501389074583, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
+      propertyPath: smokePuff
+      value: 
+      objectReference: {fileID: 8927804748159552002, guid: 8c131446a605c784d80ff91a314f2d4f, type: 3}
     - target: {fileID: 187889501389074583, guid: a5cd36274e98ad548b5c461eac8dae95, type: 3}
       propertyPath: rootedPlants.Array.size
       value: 3
