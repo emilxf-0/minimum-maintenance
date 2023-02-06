@@ -256,7 +256,7 @@ public class PickUp : MonoBehaviour
                 DestroyPlant();
                 if (smokePuff != null)
                 {
-                    Instantiate(smokePuff, transform.position + Vector3.up, Quaternion.identity);
+                    Destroy(Instantiate(smokePuff, transform.position + Vector3.up, Quaternion.identity), 0.2f);
                 }
             }
             else
