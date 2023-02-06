@@ -171,7 +171,10 @@ public class UIInputHandler : MonoBehaviour
 
     private void SetWinner(bool isLeft)
     {
+        Debug.Log("Game over man!");
+        
         Gamepad[] allgamePads = Gamepad.all.ToArray();
+        
         if(allgamePads.Length > 0)
         {
             allgamePads[0]?.SetMotorSpeeds(0, 0);
@@ -182,6 +185,7 @@ public class UIInputHandler : MonoBehaviour
         GameOverPanel.SetActive(true);
         FreezeGame(true);
         Ease setEase = Ease.OutBounce;
+        
         if (isLeft)
         {
             winnPanel.transform.position = winnLeftPoint.transform.position + new Vector3(0, 10);
